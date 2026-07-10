@@ -1,5 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <footer class="bg-primary-200 text-primary-700 border-t border-primary-300">
@@ -44,8 +45,8 @@ const currentYear = new Date().getFullYear();
       <div class="flex flex-col md:flex-row justify-between items-center text-sm text-white">
         <p class="text-primary-700 text-sm">&copy; {currentYear} 本鵠沼耳鼻咽喉科. All rights reserved.</p>
         <ul class="flex gap-6 mt-0">
-          <li><a href="/privacy/" class="text-primary-700 hover:text-primary-900 smooth-transition">プライバシーポリシー</a></li>
-          <li><a href="/terms/" class="text-primary-700 hover:text-primary-900 smooth-transition">利用規約</a></li>
+          <li><a href={`${baseUrl}privacy/`} class="text-primary-700 hover:text-primary-900 smooth-transition">プライバシーポリシー</a></li>
+          <li><a href={`${baseUrl}terms/`} class="text-primary-700 hover:text-primary-900 smooth-transition">利用規約</a></li>
         </ul>
       </div>
     </div>

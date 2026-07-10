@@ -1,10 +1,11 @@
 ---
 import Navigation from "./Navigation.astro";
 
+const baseUrl = import.meta.env.BASE_URL;
 const navItems = [
-  { name: "診療案内", href: "/information/" },
-  { name: "院長あいさつ", href: "/about/" },
-  { name: "院内設備", href: "/facilities/" },
+  { name: "診療案内", href: `${baseUrl}information/` },
+  { name: "院長あいさつ", href: `${baseUrl}about/` },
+  { name: "院内設備", href: `${baseUrl}facilities/` },
 ];
 ---
 
@@ -13,7 +14,7 @@ const navItems = [
     <!-- Main Header Row -->
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a href="/" class="text-xl lg:text-2xl font-bold text-primary-700 hover:text-primary-600 smooth-transition">本鵠沼耳鼻咽喉科</a>
+      <a href={baseUrl} class="text-xl lg:text-2xl font-bold text-primary-700 hover:text-primary-600 smooth-transition">本鵠沼耳鼻咽喉科</a>
 
       <!-- Navigation and Phone Number -->
       <div class="flex items-center gap-4 lg:gap-8">

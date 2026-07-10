@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout title="ホーム">
@@ -18,13 +20,13 @@ import Layout from "../layouts/Layout.astro";
       <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-4 border-b-2 border-primary-900 pb-2">クリニックからのお知らせ</h2>
       <ul class="space-y-4">
         <li>
-          <a href="/information/" class="text-primary-800 hover:text-primary-600 transition-colors duration-300">2024年6月1日　夏季休診のお知らせ</a>
+          <a href={`${baseUrl}information/`} class="text-primary-800 hover:text-primary-600 transition-colors duration-300">2024年6月1日　夏季休診のお知らせ</a>
         </li>
         <li>
-          <a href="/information/" class="text-primary-800 hover:text-primary-600 transition-colors duration-300">2024年5月15日　新しい診療時間のご案内</a>
+          <a href={`${baseUrl}information/`} class="text-primary-800 hover:text-primary-600 transition-colors duration-300">2024年5月15日　新しい診療時間のご案内</a>
         </li>
         <li>
-          <a href="/information/" class="text-primary-800 hover:text-primary-600 transition-colors duration-300">2024年4月10日　ゴールデンウィークの診療について</a>
+          <a href={`${baseUrl}information/`} class="text-primary-800 hover:text-primary-600 transition-colors duration-300">2024年4月10日　ゴールデンウィークの診療について</a>
         </li>
       </ul>
     </div>
@@ -34,13 +36,13 @@ import Layout from "../layouts/Layout.astro";
     <div class="container-max max-w-6xl">
       <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-4 border-b-2 border-primary-900 pb-2">個別治療</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="/services/sublingual-immunotherapy" class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
+        <a href={`${baseUrl}services/sublingual-immunotherapy`} class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
           <h3 class="text-xl font-bold text-primary-800 my-0">舌下免疫療法</h3>
         </a>
-        <a href="/services/nasopharyngeal-b-spot-therapy" class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
+        <a href={`${baseUrl}services/nasopharyngeal-b-spot-therapy`} class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
           <h3 class="text-xl font-bold text-primary-800 my-0">上咽頭Bスポット療法</h3>
         </a>
-        <a href="/services/hearing-aid-clinic" class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
+        <a href={`${baseUrl}services/hearing-aid-clinic`} class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
           <h3 class="text-xl font-bold text-primary-800 my-0">補聴器外来</h3>
         </a>
       </div>

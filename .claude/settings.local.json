@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(curl -s http://localhost:4324/)",
-      "Bash(curl -s http://localhost:4324/facilities/)"
+      "Bash(curl -s http://localhost:4324/facilities/)",
+      "Bash(gh run *)"
     ]
   }
 }
