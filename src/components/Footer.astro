@@ -1,0 +1,65 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-primary-200 text-primary-700 border-t border-primary-300">
+  <div class="container-max pt-8 md:pt-16 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-[3fr_7fr] gap-8 mb-8">
+      <!-- Company Info -->
+      <div>
+        <h4 class="text-lg mb-4 font-bold">本鵠沼耳鼻咽喉科</h4>
+        <p class="text-base text-primary-700 mb-2">
+          <span class="block">〒251-0028</span>
+          <span class="block">神奈川県藤沢市本鵠沼</span>
+          <span class="block">3-12-37 クリエート湘南第６ビル 2F</span>
+        </p>
+        <p class="text-base text-primary-700">
+          小田急本鵠沼駅より徒歩7分<br>共用駐車場80台あり（2時間まで無料）
+        </p>
+        <p class="text-base text-primary-700 mb-2">
+          <span class="block">電話: 0466-33-2777</span>
+        </p>
+        <p class="text-base text-primary-700 mb-2">
+          休診日 日・木・祝
+        </p>
+      </div>
+
+
+      <!-- Contact Info -->
+      <div>
+        <div class="w-full md:max-w-[1520px] mx-auto map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3255.0268564497533!2d139.4672598130945!3d35.33015457258873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60184e3f023859e5%3A0x97d50675113de0cf!2z44CSMjUxLTAwMjgg56We5aWI5bed55yM6Jek5rKi5biC5pys6bWg5rK877yT5LiB55uu77yR77yS4oiS77yT77yXIOODj-ODg-OCr-ODieODqeODg-OCsOm1oOayvOW6l-WGhQ!5e0!3m2!1sja!2sjp!4v1783472959903!5m2!1sja!2sjp"
+            style="width: 100%; height: 100%; border: none;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-primary-300 pt-8 text-white">
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm text-white">
+        <p class="text-primary-700 text-sm">&copy; {currentYear} 本鵠沼耳鼻咽喉科. All rights reserved.</p>
+        <ul class="flex gap-6 mt-0">
+          <li><a href="/privacy/" class="text-primary-700 hover:text-primary-900 smooth-transition">プライバシーポリシー</a></li>
+          <li><a href="/terms/" class="text-primary-700 hover:text-primary-900 smooth-transition">利用規約</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .map-container {
+    aspect-ratio: 4/3;
+  }
+
+  @media (min-width: 768px) {
+    .map-container {
+      aspect-ratio: 4/1.5;
+    }
+  }
+</style>

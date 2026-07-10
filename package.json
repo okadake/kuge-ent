@@ -1,0 +1,23 @@
+{
+  "name": "kuge-ent-renewal",
+  "version": "1.0.0",
+  "description": "久下耳鼻咽喉科 サイトリニューアル",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "lucide": "^1.23.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.9.3"
+  }
+}

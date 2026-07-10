@@ -1,0 +1,117 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="診療案内" description="本鵠沼耳鼻咽喉科の診療内容についてご説明します。">
+  <!-- Header -->
+  <section class="pt-9 pb-5 bg-white text-primary-800">
+    <div class="container-max">
+      <h1 class="text-2xl font-normal mb-2 bg-primary-700 text-white p-4 rounded-md">診療案内</h1>
+      <p class="text-base text-primary-800">当院で対応している診療内容についてご紹介します。</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section-padding bg-white pt-1">
+    <div class="container-max max-w-4xl">
+      <h2 class="text-2xl font-bold text-primary-900 mb-6 mt-0">診療内容</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-16 items-stretch">
+        <div class="px-6 py-0 bg-primary-50 rounded-lg border-2 border-primary-600">
+          <h3 class="text-xl text-primary-800 mb-2 mt-4">みみ（耳）</h3>
+          <p class="text-gray-700 leading-relaxed">中耳炎、耳のかゆみ、難聴、めまい、耳鳴り、外耳炎など、耳に関する様々な症状・疾患に対応しています。</p>
+        </div>
+
+        <div class="px-6 py-0 bg-primary-50 rounded-lg border-2 border-primary-600">
+          <h3 class="text-xl text-primary-800 mb-2 mt-4">はな（鼻）</h3>
+          <p class="text-gray-700 leading-relaxed">アレルギー性鼻炎、花粉症、蓄膿症、鼻づまり、くしゃみなど、鼻に関する疾患に対応いたします。季節性の症状もお気軽にご相談ください。</p>
+        </div>
+
+        <div class="px-6 py-0 bg-primary-50 rounded-lg border-2 border-primary-600">
+          <h3 class="text-xl text-primary-800 mb-2 mt-4">のど（喉）</h3>
+          <p class="text-gray-700 leading-relaxed">かぜ、痛み、声が出にくい、せき、扁桃腺など、喉に関する幅広い症状に対応しています。</p>
+        </div>
+
+        <div class="px-6 py-0 bg-primary-50 rounded-lg border-2 border-primary-600">
+          <h3 class="text-xl font-bold text-primary-800 mb-2 mt-4">頸部・顔面</h3>
+          <p class="text-gray-700 leading-relaxed">いたみ、腫れ、リンパ腺、顔面の異常など、頸部や顔面に関する症状にも対応しています。</p>
+        </div>
+
+        <div class="px-6 py-0 bg-primary-50 rounded-lg border-2 border-primary-600">
+          <h3 class="text-xl font-bold text-primary-800 mb-2 mt-4">補聴器外来</h3>
+          <p class="text-gray-700 leading-relaxed">月曜日の昼休み時に実施しています。予約制となっておりますので、お気軽にお問い合わせください。</p>
+          <a href="/services/hearing-aid-clinic" class="inline-block mt-0 mb-4 text-primary-600 hover:text-primary-800 underline">詳しくはこちら></a>
+        </div>
+
+        <div class="px-6 py-0 bg-primary-50 rounded-lg border-2 border-primary-600">
+          <h3 class="text-xl font-bold text-primary-800 mb-2 mt-4">舌下免疫療法</h3>
+          <p class="text-gray-700 leading-relaxed">スギ花粉やダニなどのアレルゲンを長期摂取し、アレルギー性鼻炎の症状改善を目指す舌下免疫療法を行っています。</p>
+          <a href="/services/sublingual-immunotherapy" class="inline-block mt-0 mb-4 text-primary-600 hover:text-primary-800 underline">詳しくはこちら></a>
+        </div>
+
+        <div class="px-6 py-0 bg-primary-50 rounded-lg border-2 border-primary-600">
+          <h3 class="text-xl font-bold text-primary-800 mb-2 mt-4">上咽頭Bスポット療法</h3>
+          <p class="text-gray-700 leading-relaxed">鼻の奥（鼻咽腔）の慢性炎症に対し、塩化亜鉛の塗布で後鼻漏・痰がらみ・のどの違和感などを改善します。</p>
+          <a href="/services/nasopharyngeal-b-spot-therapy" class="inline-block mt-0 mb-4 text-primary-600 hover:text-primary-800 underline">詳しくはこちら></a>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-primary-900 mb-8 mt-12">診療時間</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse table-fixed">
+          <thead class="">
+            <tr class="bg-primary-700 text-white">
+              <th class="font-normal pl-1 md:pl-4 py-2 text-left w-20 md:w-56">受付時間</th>
+              <th class="font-normal px-0 py-2 text-center">月</th>
+              <th class="font-normal px-0 py-2 text-center">火</th>
+              <th class="font-normal px-0 py-2 text-center">水</th>
+              <th class="font-normal px-0 py-2 text-center">木</th>
+              <th class="font-normal px-0 py-2 text-center">金</th>
+              <th class="font-normal px-0 py-2 text-center">土</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-primary-200 bg-primary-50">
+              <td class="md:w-56 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap">
+                9:00～<br class="md:hidden" />12:00<br class="md:hidden" />(窓口)<br />9:15～<br class="md:hidden" />11:30<br class="md:hidden" />(ネット)
+              </td>
+              <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-primary-600">休</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
+            </tr>
+            <tr class="border-b border-primary-200">
+              <td class="md:w-56 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap">
+                15:00～<br class="md:hidden" />18:00<br class="md:hidden" />(窓口)<br />15:15～<br class="md:hidden" />17:30<br class="md:hidden" />(ネット)
+              </td>
+              <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-primary-600">休<br class="md:hidden" />※</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-primary-600">休</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
+              <td class="px-0 py-2 text-center"><span class="text-primary-600">休</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-5 text-base text-primary-700 leading-7">
+        <span class="">
+          休診：木曜・日曜・祝日・火曜/土曜 午後<br /> ※ 連休明けの火曜午後は臨時診療
+        </span><br />
+        <span class="">診療は午前 9:15～、午後は 15:15～</span>
+      </p>
+
+      <h2 class="text-2xl font-bold text-primary-900 mb-8 mt-20">Web診療受付</h2>
+      <p class="mb-4">当院では、電話やインターネット（パソコン・携帯電話）を用い、自宅や外出先から当日の診察の申込を行うことができます。待ち時間の有効利用として、ご活用下さい。</p>
+      <a href="http://kuge-ent.atat.jp" target="_blank" rel="noopener noreferrer" class="block text-xl w-full md:w-[70%] mx-auto py-4 text-center bg-amber-600 text-white rounded-lg hover:bg-amber-200 hover:text-gray-200smooth-transition">Web診療受付へ</a>
+      <p class="mt-10 text-base text-gray-500 leading-6">
+        ※１　本サービスは、初めて受診される方（診療券のない方）もご利用になれます。<br />
+        ※２　電話、インターネットによる診療受付時間<br />
+        午前9:15～11:30、午後15:15～17:30（混雑時には早めに終了させて頂きます。）
+      </p>
+    </div>
+  </section>
+</Layout>

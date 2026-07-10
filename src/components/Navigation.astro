@@ -1,0 +1,23 @@
+---
+const navItems = [
+  { name: '診療案内', href: '/information/' },
+  { name: '院長あいさつ', href: '/about/' },
+  { name: '院内設備', href: '/facilities/' },
+];
+---
+
+<!-- Desktop Navigation -->
+<nav class="hidden md:block">
+  <ul class="flex gap-8">
+    {navItems.map(item => (
+      <li>
+        <a
+          href={item.href}
+          class="text-base font-medium text-gray-700 hover:text-primary-700 smooth-transition"
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

@@ -1,0 +1,127 @@
+---
+import Navigation from "./Navigation.astro";
+
+const navItems = [
+  { name: "診療案内", href: "/information/" },
+  { name: "院長あいさつ", href: "/about/" },
+  { name: "院内設備", href: "/facilities/" },
+];
+---
+
+<header class="bg-white border-b border-primary-200 sticky top-0 z-50">
+  <div class="container-max">
+    <!-- Main Header Row -->
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="text-xl lg:text-2xl font-bold text-primary-700 hover:text-primary-600 smooth-transition">本鵠沼耳鼻咽喉科</a>
+
+      <!-- Navigation and Phone Number -->
+      <div class="flex items-center gap-4 lg:gap-8">
+        <!-- Desktop Navigation -->
+        <Navigation />
+
+        <!-- Phone Number (Hidden on very small screens) -->
+        <div class="hidden sm:flex items-center gap-2 text-base lg:text-base font-semibold text-primary-700 whitespace-nowrap">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            >
+            </path>
+          </svg>
+          <span>0466-33-2777</span>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-3 text-gray-700 hover:text-primary-700 smooth-transition" aria-label="メニューを開く" aria-expanded="false">
+          <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bg-primary-100 border-b border-primary-200 overflow-y-auto z-40" aria-label="モバイルナビゲーション">
+    <ul class="container-max flex flex-col py-4 space-y-3">
+      {
+        navItems.map(item => (
+          <li class="border-b border-primary-200 pb-2 last:border-b-0">
+            <a href={item.href} class="block text-sm font-medium text-gray-700 hover:text-primary-700 py-2 px-4 rounded-lg hover:bg-primary-50 smooth-transition">
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+
+      <!-- Phone Number (Mobile) -->
+      <li class="pt-3 mt-3">
+        <div class="flex items-center gap-2 text-sm font-semibold text-primary-700 py-2 px-4">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            >
+            </path>
+          </svg>
+          <span>0466-33-2777</span>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+</style>
+
+<script is:inline>
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  if (mobileMenuBtn && mobileMenu && menuIcon && closeIcon) {
+    // Toggle menu
+    mobileMenuBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("hidden");
+
+      if (isOpen) {
+        mobileMenu.classList.remove("hidden");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "true");
+      } else {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close menu when clicking on a link
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", e => {
+      if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+</script>

@@ -1,0 +1,20 @@
+{
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 300,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "ignore",
+  "singleAttributePerLine": false,
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}
