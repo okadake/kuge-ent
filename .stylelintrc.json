@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "layer",
+          "screen",
+          "import"
+        ]
+      }
+    ]
+  },
+  "ignoreFiles": [
+    "src/styles/global.css"
+  ]
+}
