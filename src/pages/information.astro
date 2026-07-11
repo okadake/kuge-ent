@@ -63,7 +63,7 @@ const baseUrl = import.meta.env.BASE_URL;
         <table class="w-full border-collapse table-fixed">
           <thead class="">
             <tr class="bg-primary-700 text-white">
-              <th class="font-normal pl-1 md:pl-4 py-2 text-left w-20 md:w-56">受付時間</th>
+              <th class="font-normal pl-1 md:pl-4 py-2　w-20 md:w-40 text-center">窓口受付</th>
               <th class="font-normal px-0 py-2 text-center">月</th>
               <th class="font-normal px-0 py-2 text-center">火</th>
               <th class="font-normal px-0 py-2 text-center">水</th>
@@ -74,8 +74,8 @@ const baseUrl = import.meta.env.BASE_URL;
           </thead>
           <tbody>
             <tr class="border-b border-primary-200 bg-primary-50">
-              <td class="md:w-56 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap">
-                9:00～<br class="md:hidden" />12:00<br class="md:hidden" />(窓口)<br />9:15～<br class="md:hidden" />11:30<br class="md:hidden" />(ネット)
+              <td class="md:w-40 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap text-center">
+                9:00<br><span class="text-xs">▼</span><br>12:00<br>
               </td>
               <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
               <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
@@ -85,8 +85,8 @@ const baseUrl = import.meta.env.BASE_URL;
               <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
             </tr>
             <tr class="border-b border-primary-200">
-              <td class="md:w-56 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap">
-                15:00～<br class="md:hidden" />18:00<br class="md:hidden" />(窓口)<br />15:15～<br class="md:hidden" />17:30<br class="md:hidden" />(ネット)
+              <td class="md:w-40 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap text-center">
+                15:00<br><span class="text-xs">▼</span><br>18:00<br>
               </td>
               <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
               <td class="px-0 py-2 text-center"><span class="text-primary-600">休<br class="md:hidden" />※</span></td>
@@ -98,20 +98,20 @@ const baseUrl = import.meta.env.BASE_URL;
           </tbody>
         </table>
       </div>
-
-      <p class="mt-5 text-base text-primary-700 leading-7">
+      <p class="mt-5  text-rose-500">ネット予約は各15分後〜終了30分前まで（午前9:15〜11:30、午後15:15〜17:30）</p>
+      <p class="mt-5 text-base text-gray-700 leading-7">
         <span class="">
-          休診：木曜・日曜・祝日・火曜/土曜 午後<br /> ※ 連休明けの火曜午後は臨時診療<br />
-          診療は午前 9:15～、午後は 15:15～
+          診療は午前 9:15～、午後は 15:15～<br>
+          休診：木曜・日曜・祝日・火曜/土曜 午後<br> ※ 連休明けの火曜午後は臨時診療
         </span>
       </p>
 
       <h2 class="text-2xl font-bold text-primary-900 mb-8 mt-20">Web診療受付</h2>
-      <p class="mb-4">当院では、電話やインターネット（パソコン・携帯電話）を用い、自宅や外出先から当日の診察の申込を行うことができます。待ち時間の有効利用として、ご活用下さい。</p>
-      <a href="http://kuge-ent.atat.jp" target="_blank" rel="noopener noreferrer" class="block text-xl w-full md:w-[70%] mx-auto py-4 text-center bg-[#7D442D] text-white rounded-lg hover:bg-[#D2A492] hover:text-gray-200 smooth-transition">Web診療受付へ</a>
+      <p class="mb-6">当院では、電話やインターネット（パソコン・携帯電話）を用い、自宅や外出先から当日の診察の申込を行うことができます。待ち時間の有効利用として、ご活用下さい。</p>
+      <a href="http://kuge-ent.atat.jp" target="_blank" rel="noopener noreferrer" class="block text-xl w-full md:w-[50%] mx-auto py-4 text-center bg-[#7D442D] text-white rounded-lg hover:bg-[#D2A492] hover:text-gray-200 smooth-transition">Web診療受付へ</a>
       <p class="mt-10 text-base text-gray-500 leading-6">
-        ※１　本サービスは、初めて受診される方（診療券のない方）もご利用になれます。<br />
-        ※２　電話、インターネットによる診療受付時間<br />
+        ※１ 本サービスは、初めて受診される方（診療券のない方）もご利用になれます。<br />
+        ※２ 電話、インターネットによる診療受付時間<br />
         午前9:15～11:30、午後15:15～17:30（混雑時には早めに終了させて頂きます。）
       </p>
     </div>
