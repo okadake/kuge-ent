@@ -6,11 +6,15 @@ const baseUrl = import.meta.env.BASE_URL;
 
 <Layout title="ホーム">
   <!-- Hero Section -->
-  <section class="relative bg-slate-200 text-white min-h-[30vh] flex items-center">
-    <div class="p-4">
-      <div class="max-w-2xl">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">みみ・はな・のどの健康管理</h1>
-        <p class="text-lg md:text-xl mb-8 text-primary-100">地元の皆様の「みみ・はな・のど」の健康管理のお役に立ちたいとおもいます。</p>
+  <section
+    class="section-padding relative bg-cover bg-center bg-no-repeat min-h-[400px] flex items-center"
+    style={`background-image: url('${baseUrl}images/hero001.jpg')`}
+  >
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="p-4 relative z-10">
+      <div class="container-max max-w-6xl">
+        <p class="text-4xl md:text-5xl lg:text-3xl font-bold mb-6 leading-tight text-white">ご安心、ご納得いただける良質な医療を、<br>地域のみなさまに提供できる医院を目指しております。</p>
+        <p class="text-lg md:text-xl mb-8 text-gray-100">地元の皆様の「みみ・はな・のど」の健康管理のお役に立ちたいとおもいます。</p>
       </div>
     </div>
   </section>
@@ -36,13 +40,13 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="container-max max-w-6xl">
       <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-4 border-b-2 border-primary-900 pb-2">個別治療</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href={`${baseUrl}services/sublingual-immunotherapy`} class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
+        <a href={`${baseUrl}services/sublingual-immunotherapy`} class="p-8 bg-primary-200 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
           <h3 class="text-xl font-bold text-primary-800 my-0">舌下免疫療法</h3>
         </a>
-        <a href={`${baseUrl}services/nasopharyngeal-b-spot-therapy`} class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
+        <a href={`${baseUrl}services/nasopharyngeal-b-spot-therapy`} class="p-8 bg-primary-200 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
           <h3 class="text-xl font-bold text-primary-800 my-0">上咽頭Bスポット療法</h3>
         </a>
-        <a href={`${baseUrl}services/hearing-aid-clinic`} class="p-8 bg-primary-50 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
+        <a href={`${baseUrl}services/hearing-aid-clinic`} class="p-8 bg-primary-200 rounded-lg hover:bg-primary-200 smooth-transition flex flex-col items-center justify-center">
           <h3 class="text-xl font-bold text-primary-800 my-0">補聴器外来</h3>
         </a>
       </div>
@@ -51,12 +55,12 @@ const baseUrl = import.meta.env.BASE_URL;
 
   <section class="section-padding bg-white pt-6">
     <div class="container-max max-w-6xl">
-      <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-4 border-b-2 border-primary-900 pb-2">診療時間</h2>
+      <h2 class="text-xl md:text-2xl font-bold text-primary-900 mb-4 border-b-2 border-primary-900 pb-2 ">診療時間</h2>
       <div class="overflow-x-auto">
         <table class="w-full border-collapse table-fixed">
           <thead class="">
             <tr class="bg-primary-700 text-white">
-              <th class="font-normal pl-1 md:pl-4 py-2 text-left w-20 md:w-56">窓口受付</th>
+              <th class="font-normal pl-2 md:pl-4 py-2 text-left w-20 md:w-56  text-center">窓口受付</th>
               <th class="font-normal px-0 py-2 text-center">月</th>
               <th class="font-normal px-0 py-2 text-center">火</th>
               <th class="font-normal px-0 py-2 text-center">水</th>
@@ -67,8 +71,8 @@ const baseUrl = import.meta.env.BASE_URL;
           </thead>
           <tbody>
             <tr class="border-b border-primary-200 bg-primary-50">
-              <td class="md:w-56 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap">
-                9:00～<br class="md:hidden" />12:00<br class="md:hidden" />
+              <td class="md:w-56 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap text-center">
+                9:00<br><span class="text-xs">▼</span><br>12:00<br>
               </td>
               <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
               <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
@@ -78,8 +82,8 @@ const baseUrl = import.meta.env.BASE_URL;
               <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
             </tr>
             <tr class="border-b border-primary-200">
-              <td class="md:w-56 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap">
-                15:00～<br class="md:hidden" />18:00<br class="md:hidden" />
+              <td class="md:w-56 pl-1 md:pl-4 py-2 text-primary-800 whitespace-nowrap text-center">
+                15:00<br><span class="text-xs">▼</span><br>18:00<br>
               </td>
               <td class="px-0 py-2 text-center"><span class="text-base text-primary-600">●</span></td>
               <td class="px-0 py-2 text-center"><span class="text-primary-600">休<br class="md:hidden" />※</span></td>
