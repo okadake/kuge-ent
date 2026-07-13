@@ -40,7 +40,7 @@ const LIMIT = 3;
           (n) => `
         <details class="news-item text-lg font-semibold text-primary-800">
           <summary>
-            <time datetime="${n.date}">${jpDate(n.date)}</time>
+            <time datetime="${n.date}">${jpDate(n.date)}</time><br class="md:hidden" />
             <span class="news-title">${n.title}</span>
           </summary>
           <div class="news-body text-gray-600 font-normal">${n.body}</div>
