@@ -1,0 +1,169 @@
+---
+const SERVICE = 'kuge-ent';
+const API_KEY = 'kzUlpFeZmm2DTn7tJxDSnO37gMYgoZ8BZhlE';
+const LIMIT = 3;
+---
+
+<section class="news-section">
+  <h2 class="news-heading">クリニックからのお知らせ</h2>
+  <div id="news-list" class="news-list" aria-live="polite">
+    <p class="news-status">読み込んでいます…</p>
+  </div>
+  <noscript>
+    <p class="news-status">お知らせの表示にはJavaScriptが必要です。</p>
+  </noscript>
+</section>
+
+<script define:vars={{ SERVICE, API_KEY, LIMIT }}>
+  const box = document.getElementById('news-list');
+
+  const jpDate = (iso) => {
+    const d = new Date(iso);
+    return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  };
+
+  fetch(
+    `https://${SERVICE}.microcms.io/api/v1/news?limit=${LIMIT}&orders=-date&fields=id,date,title,body`,
+    { headers: { 'X-MICROCMS-API-KEY': API_KEY } }
+  )
+    .then((res) => {
+      if (!res.ok) throw new Error(res.status);
+      return res.json();
+    })
+    .then(({ contents }) => {
+      if (!contents.length) {
+        box.innerHTML = '<p class="news-status">現在、お知らせはありません。</p>';
+        return;
+      }
+      box.innerHTML = contents
+        .map(
+          (n) => `
+        <details class="news-item text-lg font-semibold text-primary-800">
+          <summary>
+            <time datetime="${n.date}">${jpDate(n.date)}</time>
+            <span class="news-title">${n.title}</span>
+          </summary>
+          <div class="news-body text-gray-600 font-normal">${n.body}</div>
+        </details>`
+        )
+        .join('');
+    })
+    .catch(() => {
+      box.innerHTML = '<p class="news-status">お知らせを読み込めませんでした。</p>';
+    });
+</script>
+
+<style>
+  .news-section {
+    padding: 0;
+  }
+
+  .news-heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2d5118;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2d5118;
+    padding-bottom: 0.5rem;
+  }
+
+  .news-list {
+    /* 通常は details リストが入る */
+  }
+
+  .news-item {
+    border-bottom: 1px solid #d1e7e5;
+  }
+
+  .news-item summary {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.125rem 2.5rem 1.125rem 0.25rem;
+    cursor: pointer;
+    color: #2d7c6f;
+    list-style: none;
+  }
+
+  .news-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .news-item summary:hover {
+    background-color: #f0f7f6;
+  }
+
+  .news-item summary:focus-visible {
+    outline: 2px solid #4ca868;
+    outline-offset: 2px;
+  }
+
+  .news-item summary::after {
+    content: "";
+    position: absolute;
+    right: 0.5rem;
+    top: 1.5rem;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #2d7c6f;
+    border-bottom: 2px solid #2d7c6f;
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+  }
+
+  .news-item[open] summary::after {
+    transform: rotate(-135deg);
+    top: 1.75rem;
+  }
+
+  .news-item time {
+    flex: none;
+    font-size: 0.875rem;
+    color: #667f7a;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .news-title {
+    /* 見出しのテキストは親の summary から継承 */
+  }
+
+  .news-body {
+    padding: 0.25rem 0.25rem 1.75rem;
+    line-height: 2;
+    color: #333;
+  }
+
+  /* リッチエディタのHTMLはコンポーネント外から来るので :global が必須 */
+  .news-body :global(p) {
+    margin: 0 0 1.25em;
+  }
+
+  .news-body :global(a) {
+    color: #2d7c6f;
+  }
+
+  .news-status {
+    color: #667f7a;
+    padding: 1.25rem 0.25rem;
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .news-heading {
+      font-size: 1.125rem;
+    }
+
+    .news-item summary {
+      flex-direction: column;
+      gap: 0.25rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .news-item summary::after {
+      transition: none;
+    }
+  }
+</style>
